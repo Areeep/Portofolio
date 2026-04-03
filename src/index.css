@@ -20,3 +20,12 @@
 	/* Supporting */
 	--color-muted: oklch(55.1% 0.027 264.364);
 }
+
+nav ul a:hover {
+	font-weight: 500;
+	color: var(--color-primary);
+}
+
+button {
+	cursor: pointer;
+}
