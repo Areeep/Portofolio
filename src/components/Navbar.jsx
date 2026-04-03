@@ -1,7 +1,17 @@
 import { useState } from "react";
+import ThemeButton from "./ThemeButton";
 
-export default function Navbar() {
+export default function Navbar({ lang, setLang }) {
 	const [isOpen, setIsOpen] = useState(false);
+
+	const toggleLang = () => {
+		setLang(lang === "id" ? "en" : "id");
+	};
+
+	const navContent = {
+		en: { about: "About", experiences: "Experiences", projects: "Projects" },
+		id: { about: "Tentang", experiences: "Pengalaman", projects: "Proyek" },
+	};
 
 	return (
 		<>
@@ -14,19 +24,19 @@ export default function Navbar() {
 				</a>
 				<ul className="hidden sm:flex sm:gap-6 md:gap-8 text-muted lg:text-xl ">
 					<li>
-						<a href="#">About</a>
+						<a href="#">{navContent[lang].about}</a>
 					</li>
 					<li>
-						<a href="#">Experiences</a>
+						<a href="#">{navContent[lang].experiences}</a>
 					</li>
 					<li>
-						<a href="#">Projects</a>
+						<a href="#">{navContent[lang].projects}</a>
 					</li>
 				</ul>
 				<div className="hidden sm:flex sm:gap-4 md:gap-6">
-					<button>
+					<button onClick={toggleLang}>
 						<svg
-							className="w-7 h-7 md:w-8 md:h-8"
+							className="w-7 h-7 md:w-8 md:h-8 text-text"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -36,30 +46,7 @@ export default function Navbar() {
 							/>
 						</svg>
 					</button>
-					<button>
-						<svg
-							className="w-7 h-7 md:w-8 md:h-8"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-						>
-							<path
-								fill="currentColor"
-								fill-rule="evenodd"
-								d="M4.25 19a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75m3 3a.75.75 0 0 1 .75-.75h8a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75"
-								clip-rule="evenodd"
-							/>
-							<path
-								fill="currentColor"
-								d="M6.083 15.25a6.75 6.75 0 1 1 11.835 0H22a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1 0-1.5z"
-							/>
-							<path
-								fill="currentColor"
-								fill-rule="evenodd"
-								d="M12 1.25a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75M4.399 4.399a.75.75 0 0 1 1.06 0l.393.392a.75.75 0 0 1-1.06 1.061l-.393-.393a.75.75 0 0 1 0-1.06m15.202 0a.75.75 0 0 1 0 1.06l-.393.393a.75.75 0 0 1-1.06-1.06l.393-.393a.75.75 0 0 1 1.06 0M1.25 12a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75m19 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1a.75.75 0 0 1-.75-.75"
-								clip-rule="evenodd"
-							/>
-						</svg>
-					</button>
+					<ThemeButton />
 				</div>
 
 				<button
@@ -67,16 +54,16 @@ export default function Navbar() {
 					onClick={() => setIsOpen(!isOpen)}
 				>
 					<svg
-						className="w-6 h-6"
+						className="w-6 h-6 text-text"
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 					>
 						<path
 							fill="none"
-							stroke="#000"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
+							stroke="currentColor"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							strokeWidth="2"
 							d="M4 6h16M4 12h16m-7 6h7"
 						/>
 					</svg>
@@ -86,34 +73,19 @@ export default function Navbar() {
 					<div className="sm:hidden absolute top-full left-0 w-full bg-background backdrop-blur-lg px-8 py-6 flex flex-col gap-4">
 						<ul className="flex flex-col gap-4 text-muted">
 							<li>
-								<a
-									href="#"
-									className="hover:text-primary"
-								>
-									About
-								</a>
+								<a href="#">{navContent[lang].about}</a>
 							</li>
 							<li>
-								<a
-									href="#"
-									className="hover:text-primary"
-								>
-									Experiences
-								</a>
+								<a href="#">{navContent[lang].experiences}</a>
 							</li>
 							<li>
-								<a
-									href="#"
-									className="hover:text-primary"
-								>
-									Projects
-								</a>
+								<a href="#">{navContent[lang].projects}</a>
 							</li>
 						</ul>
 						<div className="flex gap-2">
-							<button>
+							<button onClick={toggleLang}>
 								<svg
-									className="w-5 h-5"
+									className="w-5 h-5 text-text"
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 24 24"
 								>
@@ -123,30 +95,7 @@ export default function Navbar() {
 									/>
 								</svg>
 							</button>
-							<button>
-								<svg
-									className="w-5 h-5"
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 24 24"
-								>
-									<path
-										fill="currentColor"
-										fill-rule="evenodd"
-										d="M4.25 19a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75m3 3a.75.75 0 0 1 .75-.75h8a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75"
-										clip-rule="evenodd"
-									/>
-									<path
-										fill="currentColor"
-										d="M6.083 15.25a6.75 6.75 0 1 1 11.835 0H22a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1 0-1.5z"
-									/>
-									<path
-										fill="currentColor"
-										fill-rule="evenodd"
-										d="M12 1.25a.75.75 0 0 1 .75.75v1a.75.75 0 0 1-1.5 0V2a.75.75 0 0 1 .75-.75M4.399 4.399a.75.75 0 0 1 1.06 0l.393.392a.75.75 0 0 1-1.06 1.061l-.393-.393a.75.75 0 0 1 0-1.06m15.202 0a.75.75 0 0 1 0 1.06l-.393.393a.75.75 0 0 1-1.06-1.06l.393-.393a.75.75 0 0 1 1.06 0M1.25 12a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5H2a.75.75 0 0 1-.75-.75m19 0a.75.75 0 0 1 .75-.75h1a.75.75 0 0 1 0 1.5h-1a.75.75 0 0 1-.75-.75"
-										clip-rule="evenodd"
-									/>
-								</svg>
-							</button>
+							<ThemeButton />
 						</div>
 					</div>
 				)}
