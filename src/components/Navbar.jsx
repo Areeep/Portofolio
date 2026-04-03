@@ -1,11 +1,11 @@
 import { useState } from "react";
 import ThemeButton from "./ThemeButton";
 
-export default function Navbar({ lang, setLang }) {
+export default function Navbar({ lang, setLang, isDark, setIsDark }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleLang = () => {
-		setLang(lang === "id" ? "en" : "id");
+		setLang(lang === "id" ? "id" : "en");
 	};
 
 	const navContent = {
@@ -15,7 +15,7 @@ export default function Navbar({ lang, setLang }) {
 
 	return (
 		<>
-			<nav className="fixed top-0 left-0 right-0 flex justify-between px-4 py-4 sm:px-8 md:px-16 md:py-6 font-heading items-center backdrop-blur-sm bg-background/80">
+			<nav className="fixed top-0 left-0 right-0 flex justify-between px-4 py-4 sm:px-8 md:px-16 md:py-6 font-heading items-center backdrop-blur-sm bg-background/80 z-50">
 				<a
 					href="#"
 					className="text-primary font-bold text-2xl sm:text-3xl md:text-4xl"
@@ -24,7 +24,7 @@ export default function Navbar({ lang, setLang }) {
 				</a>
 				<ul className="hidden sm:flex sm:gap-6 md:gap-8 text-muted lg:text-xl ">
 					<li>
-						<a href="#">{navContent[lang].about}</a>
+						<a href="#about">{navContent[lang].about}</a>
 					</li>
 					<li>
 						<a href="#">{navContent[lang].experiences}</a>
@@ -36,7 +36,7 @@ export default function Navbar({ lang, setLang }) {
 				<div className="hidden sm:flex sm:gap-4 md:gap-6">
 					<button onClick={toggleLang}>
 						<svg
-							className="w-7 h-7 md:w-8 md:h-8 text-text"
+							className="w-7 h-7 lg:w-8 lg:h-8 text-text"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -46,7 +46,10 @@ export default function Navbar({ lang, setLang }) {
 							/>
 						</svg>
 					</button>
-					<ThemeButton />
+					<ThemeButton
+						isDark={isDark}
+						setIsDark={setIsDark}
+					/>
 				</div>
 
 				<button
@@ -70,10 +73,10 @@ export default function Navbar({ lang, setLang }) {
 				</button>
 
 				{isOpen && (
-					<div className="sm:hidden absolute top-full left-0 w-full bg-background backdrop-blur-lg px-8 py-6 flex flex-col gap-4">
+					<div className="sm:hidden absolute top-full left-0 w-full backdrop-blur-sm bg-background px-8 py-6 flex flex-col gap-4 z-50">
 						<ul className="flex flex-col gap-4 text-muted">
 							<li>
-								<a href="#">{navContent[lang].about}</a>
+								<a href="#about">{navContent[lang].about}</a>
 							</li>
 							<li>
 								<a href="#">{navContent[lang].experiences}</a>
@@ -95,7 +98,10 @@ export default function Navbar({ lang, setLang }) {
 									/>
 								</svg>
 							</button>
-							<ThemeButton />
+							<ThemeButton
+								isDark={isDark}
+								setIsDark={setIsDark}
+							/>
 						</div>
 					</div>
 				)}

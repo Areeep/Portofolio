@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+	scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+	display: none; /* Chrome, Safari */
+}
+
 /* @variant dark(&:where(.dark, .dark *)); */
 @variant dark (&:is(.dark *));
 
@@ -12,20 +21,6 @@
 	/* Light Mode */
 
 	/* Core Colors */
-	--color-primary: oklch(64% 0.213 47.604);
-	--color-background: oklch(0.9431 0 0);
-	--color-text: oklch(0.165 0.0017 17.33);
-
-	/* Surfaces */
-	--color-text-contrast: oklch(0.9551 0 0);
-	--color-card: oklch(98.5% 0.002 247.839);
-
-	/* Supporting */
-	--color-muted: oklch(55.1% 0.027 264.364);
-}
-
-.dark {
-	/* Core Colors */
 	--color-primary: oklch(89.7% 0.196 126.665);
 	--color-background: oklch(0.165 0.0017 17.33);
 	--color-text: oklch(0.9431 0 0);
@@ -33,6 +28,20 @@
 	/* Surfaces */
 	--color-text-contrast: oklch(0.9551 0 0);
 	--color-card: oklch(0.1543 0 0);
+
+	/* Supporting */
+	--color-muted: oklch(55.1% 0.027 264.364);
+}
+
+.dark {
+	/* Core Colors */
+	--color-primary: oklch(64% 0.213 47.604);
+	--color-background: oklch(0.9431 0 0);
+	--color-text: oklch(0.165 0.0017 17.33);
+
+	/* Surfaces */
+	--color-text-contrast: oklch(0.9551 0 0);
+	--color-card: oklch(98.5% 0.002 247.839);
 }
 
 nav ul a:hover {
