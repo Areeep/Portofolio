@@ -10,7 +10,7 @@ html::-webkit-scrollbar {
 }
 
 /* @variant dark(&:where(.dark, .dark *)); */
-@variant dark (&:is(.dark *));
+@custom-variant light (&:where(.light, .light *));
 
 @theme {
 	/* Fonts */
@@ -33,7 +33,7 @@ html::-webkit-scrollbar {
 	--color-muted: oklch(55.1% 0.027 264.364);
 }
 
-.dark {
+.light {
 	/* Core Colors */
 	--color-primary: oklch(64% 0.213 47.604);
 	--color-background: oklch(0.9431 0 0);

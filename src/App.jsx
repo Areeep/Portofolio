@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import TechStackCard from "./components/TechStackCard";
 import ScrollProgressBar from "./components/ScrollProgressBar";
+import ProjectCard from "./components/ProjectCard";
+import Footer from "./components/Footer";
 
 function App() {
 	const [time, setTime] = useState(new Date());
@@ -43,6 +45,9 @@ function App() {
 				"My journey started from a simple curiosity about how Discord bots work, which grew into a deeper focus on frontend development. I also have an interest in web design and motion design, but I mainly focus on bringing interfaces to life through code.",
 			aboutp3:
 				"I’m always eager to learn new technologies and take on challenges that help me grow as a developer.",
+			exp: "My Experiences",
+			present: "Present",
+			project: "Selected Projects",
 		},
 		id: {
 			hero: "Membangun tampilan web yang responsif dan berorientasi pengguna, dengan tampilan yang jelas dan fungsional.",
@@ -69,6 +74,9 @@ function App() {
 			),
 			aboutp3:
 				"Aku selalu tertarik untuk belajar hal baru dan terbuka pada tantangan yang bisa membantuku berkembang sebagai developer.",
+			exp: "Pengalamanku",
+			present: "Sekarang",
+			project: "Proyek Dipilih",
 		},
 	};
 
@@ -101,6 +109,7 @@ function App() {
 				</p>
 			</section>
 
+			{/* About Section */}
 			<section
 				id="about"
 				className="flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16"
@@ -140,36 +149,135 @@ function App() {
 					</p>
 					<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 						<TechStackCard
-							icon="public/icons/javascript.svg"
+							icon="/icons/javascript.svg"
 							name="JavaScript"
 						/>
 						<TechStackCard
-							icon="public/icons/react.svg"
+							icon="/icons/react.svg"
 							name="React"
 						/>
 						<TechStackCard
-							icon="public/icons/tailwind.svg"
+							icon="/icons/tailwind.svg"
 							name="Tailwind CSS"
 						/>
 						<TechStackCard
-							icon="public/icons/gsap.svg"
+							icon="/icons/gsap.svg"
 							name="GSAP"
 						/>
 						<TechStackCard
-							icon="public/icons/figma.svg"
+							icon="/icons/figma.svg"
 							name="Figma"
 						/>
 						<TechStackCard
 							icon={
-								isDark
-									? "public/icons/github-black.svg"
-									: "public/icons/github-white.svg"
+								isDark ? "/icons/github-black.svg" : "/icons/github-white.svg"
 							}
 							name="Github"
 						/>
 					</div>
 				</div>
 			</section>
+
+			{/* Experience Section */}
+			<section className="px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16">
+				<p className="text-xs sm:text-lg md:text-2xl text-primary font-medium font-heading">
+					// {content[lang].exp}
+				</p>
+				<div className="space-y-2">
+					<a
+						href="https://www.instagram.com/upapk2.untan/"
+						target="_blank"
+						className="font-body sm:text-2xl hover:underline"
+					>
+						UPA PKK Tanjungpura University
+					</a>
+					<p className="font-heading text-primary font-bold text-2xl sm:text-4xl">
+						SOFTWARE ENGINEER (FRONTEND)
+					</p>
+					<p className="font-body sm:text-xl">
+						Jan 2025 - {content[lang].present}
+					</p>
+				</div>
+			</section>
+
+			{/* Projects Section */}
+			<section className="px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16">
+				<p className="text-xs sm:text-lg md:text-2xl text-primary font-medium font-heading">
+					// {content[lang].project}
+				</p>
+
+				<p className="text-2xl sm:text-4xl lg:text-5xl font-bold font-heading">
+					FEATURED WORK
+				</p>
+
+				<ProjectCard
+					tags="Web App, Process Improvement"
+					lang={lang}
+					translations={{
+						en: {
+							title:
+								"Redesigning an Outdated Attendance System into a Modern Web Platform",
+							desc: "Rebuilt the existing attendance system to better align with user needs, improving usability, system structure, and overall efficiency within the organization.",
+						},
+						id: {
+							title: "Redesain Sistem Absensi Lama Menjadi Platform Web Modern",
+							desc: "Membangun ulang sistem absensi lama agar lebih sesuai dengan kebutuhan pengguna, sekaligus membuat alur sistemnya terasa lebih rapi, mudah digunakan, dan efisien.",
+						},
+					}}
+					icons={[
+						{ src: "/icons/figma.svg", alt: "Figma" },
+						{ src: "/icons/react.svg", alt: "React" },
+						{ src: "/icons/tailwind.svg", alt: "Tailwind CSS" },
+					]}
+					imgSrc="/placeholder.png"
+					imgAlt="Project-img"
+					metrics={{
+						en: [
+							{ value: "user experience", label: "Better" },
+							{ value: "DATA MANAGEMENT", label: "More Efficient" },
+						],
+						id: [
+							{ value: "lebih baik", label: "Pengalaman" },
+							{ value: "lebih efisien", label: "Manajemen Data" },
+						],
+					}}
+				/>
+				<ProjectCard
+					tags="Web App, Digital Printing"
+					lang={lang}
+					translations={{
+						en: {
+							title:
+								"Transforming Manual Printing Orders into a Seamless Digital Experience",
+							desc: "A web-based solution that transforms manual printing orders into a more efficient, organized, and user-friendly digital workflow.",
+						},
+						id: {
+							title: "Sistem Digital Printing Berbasis Web",
+							desc: "Aplikasi berbasis web yang dirancang untuk mengubah proses pemesanan printing manual menjadi alur digital yang lebih praktis, terstruktur, dan mudah digunakan.",
+						},
+					}}
+					icons={[
+						{ src: "/icons/figma.svg", alt: "Figma" },
+						{ src: "/icons/javascript.svg", alt: "JavaScript" },
+						{ src: "/icons/tailwind.svg", alt: "Tailwind CSS" },
+					]}
+					imgSrc="/placeholder.png"
+					imgAlt="Project-img"
+					metrics={{
+						en: [
+							{ value: "WORKFLOW EFFICIENCY", label: "Improved" },
+							{ value: "MANUAL ERRORS", label: "Reduced" },
+						],
+						id: [
+							{ value: "Meningkat", label: "Efisiensi Alur Kerja" },
+							{ value: "kesalahan manual", label: "Mengurangi" },
+						],
+					}}
+				/>
+			</section>
+
+			{/* Footer */}
+			<Footer lang={lang} />
 		</>
 	);
 }
