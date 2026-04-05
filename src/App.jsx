@@ -92,7 +92,7 @@ function App() {
 			<ScrollProgressBar />
 
 			{/* Hero Section */}
-			<section className="min-h-screen h-dvh flex flex-col justify between px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
+			<section className="min-h-screen h-dvh flex flex-col justify-between px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
 				<div className="space-y-3 sm:space-y-5">
 					<p className="font-heading text-primary font-medium text-xl sm:text-3xl">
 						Frontend Developer
