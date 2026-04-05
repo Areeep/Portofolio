@@ -92,7 +92,7 @@ function App() {
 			<ScrollProgressBar />
 
 			{/* Hero Section */}
-			<section className="h-dvh flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
+			<section className="min-h-screen h-dvh flex flex-col justify between px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
 				<div className="space-y-3 sm:space-y-5">
 					<p className="font-heading text-primary font-medium text-xl sm:text-3xl">
 						Frontend Developer
@@ -104,7 +104,7 @@ function App() {
 						{content[lang].hero}
 					</p>
 				</div>
-				<p className="font-mono text-muted text-right text-sm sm:text-base sticky">
+				<p className="font-mono text-muted text-right mt-auto text-sm sm:text-base">
 					Pontianak, Indonesia - {timeStr} {content[lang].timezone}
 				</p>
 			</section>
@@ -112,7 +112,7 @@ function App() {
 			{/* About Section */}
 			<section
 				id="about"
-				className="flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16"
+				className="flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 pb-28 bg-background text-text space-y-8 sm:space-y-16"
 			>
 				<div className="space-y-6">
 					<p className="text-sm sm:text-lg md:text-2xl text-primary font-medium font-heading">
