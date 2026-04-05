@@ -7,11 +7,10 @@ export default function Hero({ content, lang, timeStr }) {
 		const nameSplit = new SplitText(".name", { type: "chars" });
 		const roleSplit = new SplitText(".role", { type: "lines" });
 		const subtitleSplit = new SplitText(".subtitle", { type: "lines" });
-		const timerSplit = new SplitText(".timer", { type: "lines" });
 
 		gsap.from(roleSplit.lines, {
 			opacity: 0,
-			ypercent: 100,
+			yPercent: 100,
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
@@ -27,22 +26,22 @@ export default function Hero({ content, lang, timeStr }) {
 
 		gsap.from(subtitleSplit.lines, {
 			opacity: 0,
-			ypercent: 100,
+			yPercent: 100,
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
 			delay: 1.5,
 		});
 
-		gsap.from(timerSplit.lines, {
+		gsap.from(".timer", {
 			opacity: 0,
-			ypercent: 100,
+			yPercent: 100,
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
 			delay: 2,
 		});
-	});
+	}, []);
 
 	return (
 		<section className="min-h-screen h-dvh flex flex-col justify-between px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
