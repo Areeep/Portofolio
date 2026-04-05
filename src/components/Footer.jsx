@@ -49,7 +49,7 @@ export default function Footer({ lang }) {
 						</span>
 					</a>
 					<a
-						href="#"
+						href="www.linkedin.com/in/syariffullah"
 						className="hover:text-primary relative group"
 					>
 						<svg
@@ -63,7 +63,7 @@ export default function Footer({ lang }) {
 							/>
 						</svg>
 						<span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-card border border-muted/20 text-text text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none font-medium">
-							LinkedIn
+							in/syariffullah
 						</span>
 					</a>
 					<a

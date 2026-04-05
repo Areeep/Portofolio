@@ -5,19 +5,21 @@ import { SplitText } from "gsap/all";
 export default function Hero({ content, lang, timeStr }) {
 	useGSAP(() => {
 		const nameSplit = new SplitText(".name", { type: "chars" });
-		const roleSplit = new SplitText(".role", { type: "lines" });
 		const subtitleSplit = new SplitText(".subtitle", { type: "lines" });
 
-		gsap.from(roleSplit.lines, {
+		nameSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+
+		gsap.from(".role", {
 			opacity: 0,
 			yPercent: 100,
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
-			delay: 1,
+			delay: 0.5,
 		});
 
 		gsap.from(nameSplit.chars, {
+			opacity: 0,
 			yPercent: 100,
 			duration: 1.8,
 			ease: "expo.out",
@@ -30,7 +32,7 @@ export default function Hero({ content, lang, timeStr }) {
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
-			delay: 1.5,
+			delay: 1,
 		});
 
 		gsap.from(".timer", {
@@ -39,7 +41,7 @@ export default function Hero({ content, lang, timeStr }) {
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
-			delay: 2,
+			delay: 1.5,
 		});
 	}, []);
 
