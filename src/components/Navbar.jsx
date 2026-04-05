@@ -27,10 +27,10 @@ export default function Navbar({ lang, setLang, isDark, setIsDark }) {
 						<a href="#about">{navContent[lang].about}</a>
 					</li>
 					<li>
-						<a href="#">{navContent[lang].experiences}</a>
+						<a href="#experiences">{navContent[lang].experiences}</a>
 					</li>
 					<li>
-						<a href="#">{navContent[lang].projects}</a>
+						<a href="#about">{navContent[lang].projects}</a>
 					</li>
 				</ul>
 				<div className="hidden sm:flex sm:gap-4 md:gap-6">
@@ -79,10 +79,10 @@ export default function Navbar({ lang, setLang, isDark, setIsDark }) {
 								<a href="#about">{navContent[lang].about}</a>
 							</li>
 							<li>
-								<a href="#">{navContent[lang].experiences}</a>
+								<a href="#experiences">{navContent[lang].experiences}</a>
 							</li>
 							<li>
-								<a href="#">{navContent[lang].projects}</a>
+								<a href="#projects">{navContent[lang].projects}</a>
 							</li>
 						</ul>
 						<div className="flex gap-2">

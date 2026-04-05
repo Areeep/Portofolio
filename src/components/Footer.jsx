@@ -1,17 +1,17 @@
 export default function Footer({ lang }) {
 	return (
-		<footer className="flex flex-col sm:flex-row px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-4 lg:py-16 bg-background text-text space-y-8 sm:space-y-16 font-body items-center">
-			<p className="text-primary text-2xl md:text-3xl font-heading font-bold sm:mb-0">
-				{lang === "en" ? "Contact Me." : "Hubungi Aku."}
+		<footer className="flex flex-col sm:flex-row px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-4 lg:py-16 bg-background text-text space-y-4 sm:space-y-16 font-body items-center">
+			<p className="text-primary text-2xl sm:text-3xl lg:text-4xl font-heading font-bold sm:mb-0">
+				{lang === "en" ? "Contact Me." : "Kontak Saya."}
 			</p>
-			<div className="flex flex-col items-center sm:items-end gap-2 flex-1">
+			<div className="flex flex-col items-center sm:items-end gap-4 flex-1">
 				<div className="flex gap-2">
 					<a
 						href="#"
 						className="hover:text-primary"
 					>
 						<svg
-							className="w-3 h-3 sm:w-5 sm:h-5"
+							className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -32,7 +32,7 @@ export default function Footer({ lang }) {
 						className="hover:text-primary"
 					>
 						<svg
-							className="w-3 h-3 sm:w-5 sm:h-5"
+							className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -47,7 +47,7 @@ export default function Footer({ lang }) {
 						className="hover:text-primary"
 					>
 						<svg
-							className="w-3 h-3 sm:w-5 sm:h-5"
+							className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -62,7 +62,7 @@ export default function Footer({ lang }) {
 						className="hover:text-primary"
 					>
 						<svg
-							className="w-3 h-3 sm:w-5 sm:h-5"
+							className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -77,7 +77,7 @@ export default function Footer({ lang }) {
 						className="hover:text-primary"
 					>
 						<svg
-							className="w-3 h-3 sm:w-5 sm:h-5"
+							className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 						>
@@ -88,7 +88,7 @@ export default function Footer({ lang }) {
 						</svg>
 					</a>
 				</div>
-				<p className="text-right text-xs text-muted sm:text-lg">
+				<p className="text-right text-xs text-muted md:text-lg">
 					&copy; 2026 Syariffullah. All rights reserved
 				</p>
 			</div>

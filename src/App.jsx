@@ -50,7 +50,7 @@ function App() {
 			project: "Selected Projects",
 		},
 		id: {
-			hero: "Membangun tampilan web yang responsif dan berorientasi pengguna, dengan tampilan yang jelas dan fungsional.",
+			hero: "Membangun tampilan web yang responsif dan berorientasi pengguna yang fungsional.",
 			timezone: "WIB",
 			aboutme: "Tentang Aku",
 			abouthead: (
@@ -74,9 +74,9 @@ function App() {
 			),
 			aboutp3:
 				"Aku selalu tertarik untuk belajar hal baru dan terbuka pada tantangan yang bisa membantuku berkembang sebagai developer.",
-			exp: "Pengalamanku",
+			exp: "Pengalaman",
 			present: "Sekarang",
-			project: "Proyek Dipilih",
+			project: "Daftar Proyek",
 		},
 	};
 
@@ -92,19 +92,19 @@ function App() {
 			<ScrollProgressBar />
 
 			{/* Hero Section */}
-			<section className="h-dvh flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background">
-				<div className="space-y-5">
+			<section className="h-dvh flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
+				<div className="space-y-3 sm:space-y-5">
 					<p className="font-heading text-primary font-medium text-xl sm:text-3xl">
 						Frontend Developer
 					</p>
-					<p className="font-heading font-bold text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-text">
+					<p className="font-heading font-bold text-[48px] sm:text-6xl md:text-8xl lg:text-9xl text-text">
 						SYARIFFULLAH
 					</p>
 					<p className="font-body md:text-2xl text-muted max-w-[30ch] sm:max-w-[35ch]">
 						{content[lang].hero}
 					</p>
 				</div>
-				<p className="font-mono text-muted mt-auto text-right text-xs sm:text-base">
+				<p className="font-mono text-muted mt-auto text-right text-sm sm:text-base">
 					Pontianak, Indonesia - {timeStr} {content[lang].timezone}
 				</p>
 			</section>
@@ -115,7 +115,7 @@ function App() {
 				className="flex flex-col px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16"
 			>
 				<div className="space-y-6">
-					<p className="text-xs sm:text-lg md:text-2xl text-primary font-medium font-heading">
+					<p className="text-sm sm:text-lg md:text-2xl text-primary font-medium font-heading">
 						// {content[lang].aboutme}
 					</p>
 					<p className="text-2xl sm:text-4xl lg:text-5xl font-body leading-snug">
@@ -125,17 +125,17 @@ function App() {
 
 				<div className="space-y-8">
 					<div className="space-y-4">
-						<p className="font-mono text-muted text-xs sm:text-lg md:text-2xl">
+						<p className="font-mono text-muted text-sm sm:text-lg md:text-2xl">
 							{content[lang].thisisme}
 						</p>
 						<hr className="border-t-2 border-muted/30" />
 					</div>
 					<div className="flex flex-col gap-8 sm:gap-16 lg:flex-row justify-between">
-						<p className="font-mono text-xs sm:text-2xl lg:w-1/2">
+						<p className="font-mono text-lg sm:text-2xl lg:w-1/2">
 							{content[lang].intro}{" "}
 							<span className="text-primary">Syariffullah</span>.
 						</p>
-						<div className="font-body text-xs sm:text-xl lg:w-1/2 text-muted space-y-6">
+						<div className="font-body text-sm sm:text-xl lg:w-1/2 text-muted space-y-6">
 							<p>{content[lang].aboutp1}</p>
 							<p>{content[lang].aboutp2}</p>
 							<p>{content[lang].aboutp3}</p>
@@ -151,36 +151,51 @@ function App() {
 						<TechStackCard
 							icon="/icons/javascript.svg"
 							name="JavaScript"
+							px="8"
+							py="4"
 						/>
 						<TechStackCard
 							icon="/icons/react.svg"
 							name="React"
+							px="8"
+							py="4"
 						/>
 						<TechStackCard
 							icon="/icons/tailwind.svg"
 							name="Tailwind CSS"
+							px="8"
+							py="4"
 						/>
 						<TechStackCard
 							icon="/icons/gsap.svg"
 							name="GSAP"
+							px="8"
+							py="4"
 						/>
 						<TechStackCard
 							icon="/icons/figma.svg"
 							name="Figma"
+							px="8"
+							py="4"
 						/>
 						<TechStackCard
 							icon={
 								isDark ? "/icons/github-black.svg" : "/icons/github-white.svg"
 							}
 							name="Github"
+							px="8"
+							py="4"
 						/>
 					</div>
 				</div>
 			</section>
 
 			{/* Experience Section */}
-			<section className="px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16">
-				<p className="text-xs sm:text-lg md:text-2xl text-primary font-medium font-heading">
+			<section
+				id="experiences"
+				className="px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-4 sm:space-y-16"
+			>
+				<p className="text-sm sm:text-lg md:text-2xl text-primary font-medium font-heading">
 					// {content[lang].exp}
 				</p>
 				<div className="space-y-2">
@@ -191,7 +206,7 @@ function App() {
 					>
 						UPA PKK Tanjungpura University
 					</a>
-					<p className="font-heading text-primary font-bold text-2xl sm:text-4xl">
+					<p className="font-heading text-primary font-bold text-3xl sm:text-4xl">
 						SOFTWARE ENGINEER (FRONTEND)
 					</p>
 					<p className="font-body sm:text-xl">
@@ -201,8 +216,11 @@ function App() {
 			</section>
 
 			{/* Projects Section */}
-			<section className="px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-8 sm:space-y-16">
-				<p className="text-xs sm:text-lg md:text-2xl text-primary font-medium font-heading">
+			<section
+				id="projects"
+				className="px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 bg-background text-text space-y-6 sm:space-y-16"
+			>
+				<p className="text-sm sm:text-lg md:text-2xl text-primary font-medium font-heading">
 					// {content[lang].project}
 				</p>
 
@@ -221,7 +239,7 @@ function App() {
 						},
 						id: {
 							title: "Redesain Sistem Absensi Lama Menjadi Platform Web Modern",
-							desc: "Membangun ulang sistem absensi lama agar lebih sesuai dengan kebutuhan pengguna, sekaligus membuat alur sistemnya terasa lebih rapi, mudah digunakan, dan efisien.",
+							desc: "Membangun ulang sistem absensi lama agar lebih sesuai dengan kebutuhan pengguna, sekaligus membuat alur sistemnya lebih rapi, mudah digunakan, dan efisien.",
 						},
 					}}
 					icons={[
@@ -231,16 +249,18 @@ function App() {
 					]}
 					imgSrc="/placeholder.png"
 					imgAlt="Project-img"
-					metrics={{
-						en: [
-							{ value: "user experience", label: "Better" },
-							{ value: "DATA MANAGEMENT", label: "More Efficient" },
-						],
-						id: [
-							{ value: "lebih baik", label: "Pengalaman" },
-							{ value: "lebih efisien", label: "Manajemen Data" },
-						],
-					}}
+					// metrics={{
+					// 	en: [
+					// 		{ value: "user experience", label: "Better" },
+					// 		{ value: "DATA MANAGEMENT", label: "More Efficient" },
+					// 	],
+					// 	id: [
+					// 		{ value: "lebih baik", label: "Pengalaman" },
+					// 		{ value: "lebih efisien", label: "Manajemen Data" },
+					// 	],
+					// }}
+					icon="/icons/figma.svg"
+					name="Figma"
 				/>
 				<ProjectCard
 					tags="Web App, Digital Printing"
@@ -263,16 +283,16 @@ function App() {
 					]}
 					imgSrc="/placeholder.png"
 					imgAlt="Project-img"
-					metrics={{
-						en: [
-							{ value: "WORKFLOW EFFICIENCY", label: "Improved" },
-							{ value: "MANUAL ERRORS", label: "Reduced" },
-						],
-						id: [
-							{ value: "Meningkat", label: "Efisiensi Alur Kerja" },
-							{ value: "kesalahan manual", label: "Mengurangi" },
-						],
-					}}
+					// metrics={{
+					// 	en: [
+					// 		{ value: "WORKFLOW EFFICIENCY", label: "Improved" },
+					// 		{ value: "MANUAL ERRORS", label: "Reduced" },
+					// 	],
+					// 	id: [
+					// 		{ value: "Meningkat", label: "Efisiensi Alur Kerja" },
+					// 		{ value: "kesalahan manual", label: "Mengurangi" },
+					// 	],
+					// }}
 				/>
 			</section>
 
