@@ -97,14 +97,14 @@ function App() {
 					<p className="font-heading text-primary font-medium text-xl sm:text-3xl">
 						Frontend Developer
 					</p>
-					<p className="font-heading font-bold text-[48px] sm:text-6xl md:text-8xl lg:text-9xl text-text">
+					<p className="font-heading font-bold text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-text">
 						SYARIFFULLAH
 					</p>
 					<p className="font-body md:text-2xl text-muted max-w-[30ch] sm:max-w-[35ch]">
 						{content[lang].hero}
 					</p>
 				</div>
-				<p className="font-mono text-muted mt-auto text-right text-sm sm:text-base">
+				<p className="font-mono text-muted text-right text-sm sm:text-base sticky">
 					Pontianak, Indonesia - {timeStr} {content[lang].timezone}
 				</p>
 			</section>
