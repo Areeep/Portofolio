@@ -1,14 +1,19 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 import TechStackCard from "./components/TechStackCard";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import ProjectCard from "./components/ProjectCard";
 import Footer from "./components/Footer";
 
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
 function App() {
 	const [time, setTime] = useState(new Date());
-	const [lang, setLang] = useState("en");
+	const [lang, setLang] = useState("id");
 	const [isDark, setIsDark] = useState(false);
 
 	useEffect(() => {
@@ -92,22 +97,11 @@ function App() {
 			<ScrollProgressBar />
 
 			{/* Hero Section */}
-			<section className="min-h-screen h-dvh flex flex-col justify-between px-8 sm:px-20 md:px-24 lg:px-20 xl:px-36 py-28 lg:py-36 xl:py-36 bg-background overflow-hidden">
-				<div className="space-y-3 sm:space-y-5">
-					<p className="font-heading text-primary font-medium text-xl sm:text-3xl">
-						Frontend Developer
-					</p>
-					<p className="font-heading font-bold text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-text">
-						SYARIFFULLAH
-					</p>
-					<p className="font-body md:text-2xl text-muted max-w-[30ch] sm:max-w-[35ch]">
-						{content[lang].hero}
-					</p>
-				</div>
-				<p className="font-mono text-muted text-right mt-auto text-sm sm:text-base">
-					Pontianak, Indonesia - {timeStr} {content[lang].timezone}
-				</p>
-			</section>
+			<Hero
+				lang={lang}
+				content={content}
+				timeStr={timeStr}
+			/>
 
 			{/* About Section */}
 			<section
