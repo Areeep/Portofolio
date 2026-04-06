@@ -13,8 +13,16 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
 	const [time, setTime] = useState(new Date());
-	const [lang, setLang] = useState("id");
-	const [isDark, setIsDark] = useState(false);
+	const [lang, setLang] = useState(() => {
+		return localStorage.getItem("lang") || "id";
+	});
+	const [isDark, setIsDark] = useState(() => {
+		const saved = localStorage.getItem("theme");
+		if (saved === "light") {
+			document.body.classList.add("light");
+		}
+		return saved === "dark" || saved === null;
+	});
 
 	useEffect(() => {
 		const timer = setInterval(() => {
@@ -29,6 +37,10 @@ function App() {
 		second: "2-digit",
 		hour12: false,
 	});
+
+	useEffect(() => {
+		window.history.replaceState(null, "", window.location.pathname);
+	}, []);
 
 	const content = {
 		en: {
@@ -174,7 +186,7 @@ function App() {
 						/>
 						<TechStackCard
 							icon={
-								isDark ? "/icons/github-black.svg" : "/icons/github-white.svg"
+								isDark ? "/icons/github-white.svg" : "/icons/github-black.svg"
 							}
 							name="Github"
 							px="8"

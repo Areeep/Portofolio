@@ -7,8 +7,6 @@ export default function Hero({ content, lang, timeStr }) {
 		const nameSplit = new SplitText(".name", { type: "chars" });
 		const subtitleSplit = new SplitText(".subtitle", { type: "lines" });
 
-		nameSplit.chars.forEach((char) => char.classList.add("text-gradient"));
-
 		gsap.from(".role", {
 			opacity: 0,
 			yPercent: 100,

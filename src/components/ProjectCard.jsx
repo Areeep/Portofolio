@@ -55,9 +55,9 @@ export default function ProjectCard({
 
 					<a
 						href="#"
-						className="group flex w-fit gap-2 hover:underline font-mono uppercase font-medium text-xs sm:text-lg md:text-lg lg:text-sm items-center hover:text-primary"
+						className="group flex w-fit gap-2 hover:underline font-mono uppercase font-medium text-xs sm:text-lg md:text-lg lg:text-md items-center hover:text-primary"
 					>
-						{lang === "en" ? "View Study Case" : "Lihat Detail"}
+						{lang === "en" ? "View Study Case" : "Lihat Studi Kasus"}
 						<svg
 							className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
 							xmlns="http://www.w3.org/2000/svg"

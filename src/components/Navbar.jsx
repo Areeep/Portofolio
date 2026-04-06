@@ -5,7 +5,9 @@ export default function Navbar({ lang, setLang, isDark, setIsDark }) {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleLang = () => {
-		setLang(lang === "en" ? "id" : "en");
+		const newLang = lang === "en" ? "id" : "en";
+		setLang(newLang);
+		localStorage.setItem("lang", newLang);
 	};
 
 	const navContent = {

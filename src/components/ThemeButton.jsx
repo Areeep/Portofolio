@@ -1,7 +1,14 @@
 export default function ThemeButton({ isDark, setIsDark }) {
 	const toggleTheme = () => {
-		setIsDark(!isDark);
-		document.body.classList.toggle("light");
+		const newIsDark = !isDark;
+		setIsDark(newIsDark);
+		if (newIsDark) {
+			document.body.classList.remove("light");
+			localStorage.setItem("theme", "dark");
+		} else {
+			document.body.classList.add("light");
+			localStorage.setItem("theme", "light");
+		}
 	};
 	return (
 		<>
