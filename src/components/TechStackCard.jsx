@@ -1,7 +1,7 @@
 export default function TechStackCard({ icon, name, px, py, project }) {
 	return (
 		<div
-			className={`flex font-heading px-${px} py-${py} items-center cursor-default ${project ? "gap-2 xl:px-4 xl:py-2 xl:bg-white/5 rounded-full" : "gap-4"}`}
+			className={`texh-card flex font-heading px-${px} py-${py} items-center cursor-default ${project ? "gap-2 xl:px-4 xl:py-2 xl:bg-white/5 rounded-full" : "gap-4"}`}
 		>
 			<img
 				className={
