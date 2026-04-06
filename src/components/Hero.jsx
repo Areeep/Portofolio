@@ -39,7 +39,7 @@ export default function Hero({ content, lang, timeStr }) {
 			duration: 1.8,
 			ease: "expo.out",
 			stagger: 0.05,
-			delay: 1.5,
+			delay: 1.3,
 		});
 	}, []);
 
