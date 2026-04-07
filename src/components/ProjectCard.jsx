@@ -70,9 +70,10 @@ export default function ProjectCard({
 						{desc}
 					</p>
 					<div className="flex gap-4 mt-6">
-						{icons.map((icon) => {
+						{icons.map((icon, index) => {
 							return (
 								<TechStackCard
+									key={icon.alt || icon.src || index}
 									icon={icon.src}
 									name={icon.alt}
 									project
@@ -97,7 +98,7 @@ export default function ProjectCard({
 						))}
 					</div> */}
 
-					<a
+					<span
 						href="#"
 						className="group flex w-fit gap-2 hover:underline font-mono uppercase font-medium text-xs sm:text-lg md:text-lg lg:text-md items-center hover:text-primary"
 					>
@@ -109,12 +110,12 @@ export default function ProjectCard({
 						>
 							<path
 								fill="currentColor"
-								fill-rule="evenodd"
+								fillRule="evenodd"
 								d="M10.159 10.72a.75.75 0 1 0 1.06 1.06l3.25-3.25L15 8l-.53-.53l-3.25-3.25a.75.75 0 0 0-1.061 1.06l1.97 1.97H1.75a.75.75 0 1 0 0 1.5h10.379z"
-								clip-rule="evenodd"
+								clipRule="evenodd"
 							/>
 						</svg>
-					</a>
+					</span>
 				</div>
 			</div>
 			<img
