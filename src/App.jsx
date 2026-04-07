@@ -194,7 +194,7 @@ function App() {
 					// }}
 					icon="/icons/figma.svg"
 					name="Figma"
-					href="#"
+					slug="nama-project-1"
 				/>
 				<ProjectCard
 					tags="Web App, Digital Printing"
@@ -217,7 +217,7 @@ function App() {
 					]}
 					imgSrc="/placeholder.png"
 					imgAlt="Project-img"
-					href="#"
+					slug="nama-project-2"
 					// metrics={{
 					// 	en: [
 					// 		{ value: "WORKFLOW EFFICIENCY", label: "Improved" },

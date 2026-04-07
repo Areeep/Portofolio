@@ -9,7 +9,7 @@ export default function ProjectCard({
 	lang,
 	// metrics,
 	icons,
-	href,
+	slug,
 }) {
 	const { title, desc } = translations[lang] ?? translations["id"];
 	// const metricList = metrics?.[lang] ?? metrics?.["id"] ?? [];
@@ -43,7 +43,7 @@ export default function ProjectCard({
 
 	return (
 		<a
-			href={href}
+			href={`/case/` + slug}
 			target="_blank"
 			className="relative flex flex-col-reverse lg:flex-row lg:items-stretch bg-card rounded-2xl border border-muted/20 hover:border-primary/40 hover:-translate-y-1 transition-[transform,border,box-shadow,translate] duration-500 hover:shadow-lg "
 			onMouseMove={handleMouseMove}
