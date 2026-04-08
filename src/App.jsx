@@ -135,7 +135,7 @@ function App() {
 					<a
 						href="https://www.instagram.com/upapk2.untan/"
 						target="_blank"
-						className="font-body sm:text-2xl hover:underline"
+						className="font-body sm:text-2xl hover:underline hover:text-primary"
 					>
 						UPA PKK Tanjungpura University
 					</a>
@@ -180,7 +180,7 @@ function App() {
 						{ src: "/icons/react.svg", alt: "React" },
 						{ src: "/icons/tailwind.svg", alt: "Tailwind CSS" },
 					]}
-					imgSrc="/placeholder.png"
+					imgSrc="/projects/project1.png"
 					imgAlt="Project-img"
 					// metrics={{
 					// 	en: [
@@ -194,7 +194,7 @@ function App() {
 					// }}
 					icon="/icons/figma.svg"
 					name="Figma"
-					slug="nama-project-1"
+					slug="project1"
 				/>
 				<ProjectCard
 					tags="Web App, Digital Printing"
@@ -217,7 +217,7 @@ function App() {
 					]}
 					imgSrc="/placeholder.png"
 					imgAlt="Project-img"
-					slug="nama-project-2"
+					slug="project2"
 					// metrics={{
 					// 	en: [
 					// 		{ value: "WORKFLOW EFFICIENCY", label: "Improved" },
